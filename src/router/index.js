@@ -11,6 +11,12 @@ const routes = [
     component: () => import("@/views/home/HomeView.vue"), // Lazy load the Home component
     meta: { showNavbar: true }, // Add this line
   },
+  {
+    path: "/category/:id", // id 매개변수가 있는 카테고리 경로에 대한 새로운 라우트
+    name: "Category",
+    component: () => import("@/views/category/CategoryView.vue"), // 경로가 필요한 경우 조정하십시오.
+    meta: { showNavbar: true },
+  },
 ];
 
 // Create the router instance
