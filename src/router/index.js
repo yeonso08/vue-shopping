@@ -9,6 +9,7 @@ const routes = [
     path: "/",
     name: "Home",
     component: () => import("@/views/home/HomeView.vue"), // Lazy load the Home component
+    meta: { showNavbar: true }, // Add this line
   },
 ];
 

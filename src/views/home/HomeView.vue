@@ -1,6 +1,6 @@
 <template>
     <div>
-        <b-button variant="primary">Button</b-button>
+        <b-button style="background-color: var(--primary);">Button</b-button>
     </div>
 </template>
 
