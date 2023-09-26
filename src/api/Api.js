@@ -8,4 +8,8 @@ export const Api = {
   getCategoryProducts: function (payload) {
     return axios.get(`https://fakestoreapi.com/products/category/${payload}`);
   },
+
+  getProductsDetail: function (payload) {
+    return axios.get(`https://fakestoreapi.com/products/${payload}`);
+  },
 };
