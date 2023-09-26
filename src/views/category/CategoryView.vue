@@ -1,7 +1,11 @@
 <template>
-    <div>
-        <CategoryCard v-for="product in CategoryProducts" :key="product.id" :item="product" />
-    </div>
+    <b-container>
+        <b-row cols="4">
+            <b-col v-for="product in CategoryProducts" :key="product.id">
+                <CategoryCard :item="product" />
+            </b-col>
+        </b-row>
+    </b-container>
 </template>
 
 <script>
@@ -30,6 +34,5 @@ export default {
         const categoryId = this.$route.params.id;
         this.fetchCategoryProducts(categoryId);
     }
-
 }
 </script>
