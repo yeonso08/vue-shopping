@@ -1,6 +1,6 @@
 <template>
     <div>
-        hi
+        <b-button variant="primary">Button</b-button>
     </div>
 </template>
 
