@@ -18,7 +18,8 @@
                 장바구니
             </span>
             <span>
-                <WishlistButton :productId="item.id" />
+                <WishlistButton :productId="item.id" :productName="item.title" :productImage="item.image"
+                    :productPrice="item.price" />
             </span>
         </div>
     </div>

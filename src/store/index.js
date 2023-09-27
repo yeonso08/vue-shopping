@@ -9,6 +9,7 @@ export default new Vuex.Store({
   },
   mutations: {
     TOGGLE_LIKE(state, productId) {
+      console.log("TOGGLE_LIKE called for productId:", productId);
       if (state.likedProducts.includes(productId)) {
         state.likedProducts = state.likedProducts.filter(
           id => id !== productId

@@ -1,6 +1,6 @@
 <template>
-    <div @click="toggleLike">
-        <div v-if="isProductLiked" variant="danger">
+    <div @click="onToggleLike">
+        <div v-if="isProductLiked(productId)" variant="danger">
             ♥
         </div>
         <div v-else variant="danger">
@@ -17,6 +17,18 @@ export default {
         productId: {
             type: [String, Number],
             required: true
+        },
+        productName: {
+            type: String,
+            required: true
+        },
+        productImage: {
+            type: String,
+            required: true
+        },
+        productPrice: {
+            type: [String, Number],
+            required: true
         }
     },
     computed: {
@@ -24,8 +36,13 @@ export default {
     },
     methods: {
         ...mapActions(['toggleLike']),
-        toggleLike() {
+        onToggleLike() {
             this.toggleLike(this.productId);
+            this.$bvToast.toast(`${this.productName} ${this.productPrice} `, {
+                title: 'Wish',
+                src: `${this.productImage}`,
+                autoHideDelay: 5000,
+            })
         }
     }
 }
