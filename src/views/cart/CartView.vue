@@ -4,18 +4,22 @@
             <b-col cols="7">
                 <CartTable :items="cartItems" />
             </b-col>
-            <b-col cols="1">2</b-col>
-            <b-col cols="4">3</b-col>
+            <b-col cols="1"></b-col>
+            <b-col cols="4">
+                <CartBill :items="cartItems" />
+            </b-col>
         </b-row>
     </div>
 </template>
 
 <script>
 import CartTable from '@/components/carts/CartTable.vue'
+import CartBill from '@/components/carts/CartBill.vue';
 
 export default {
     components: {
         CartTable,
+        CartBill,
     },
     data() {
         return {
