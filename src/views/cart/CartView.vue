@@ -2,7 +2,7 @@
     <div>
         <b-row>
             <b-col cols="7">
-                <CartTable :items="cartItems" />
+                <CartTable :items="cartItems" @cartUpdated="loadCartItems" />
             </b-col>
             <b-col cols="1"></b-col>
             <b-col cols="4">
@@ -27,7 +27,12 @@ export default {
         };
     },
     mounted() {
-        this.cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+        this.loadCartItems();
+    },
+    methods: {
+        loadCartItems() {
+            this.cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+        }
     }
 }
 </script>
