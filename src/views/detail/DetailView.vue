@@ -19,7 +19,7 @@ import DetailInforCard from '@/components/details/DetailInforCard.vue';
 export default {
     components: {
         DetailImgCard,
-        DetailInforCard
+        DetailInforCard,
     },
     data() {
         return {

@@ -15,7 +15,7 @@
         </div>
         <div>
             <span>
-                장바구니
+                <CartButton :item="item" />
             </span>
             <span>
                 <WishlistButton :productId="item.id" :productName="item.title" :productImage="item.image"
@@ -26,10 +26,13 @@
 </template>
 
 <script>
+import CartButton from '../common/CartButton.vue'
 import WishlistButton from '../common/WishlistButton.vue'
+
 export default {
     components: {
         WishlistButton,
+        CartButton,
     },
     props: {
         item: {
