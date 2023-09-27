@@ -11,11 +11,11 @@
         </div>
         <hr />
         <div>
-            수량
+            <QtyButton :value="qty" @input="updateQty" />
         </div>
         <div>
             <span>
-                <CartButton :item="item" />
+                <CartButton :item="item" :qty="qty" />
             </span>
             <span>
                 <WishlistButton :productId="item.id" :productName="item.title" :productImage="item.image"
@@ -27,20 +27,30 @@
 
 <script>
 import CartButton from '../common/CartButton.vue'
+import QtyButton from '../common/QtyButton.vue'
 import WishlistButton from '../common/WishlistButton.vue'
 
 export default {
+    data() {
+        return {
+            qty: 1
+        };
+    },
     components: {
         WishlistButton,
         CartButton,
+        QtyButton,
     },
     props: {
         item: {
             type: Object,
             required: true
-        }
+        },
     },
+    methods: {
+        updateQty(value) {
+            this.qty = value;
+        }
+    }
 }
 </script>
-
-<style></style>

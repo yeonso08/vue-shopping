@@ -22,6 +22,12 @@ const routes = [
     component: () => import("@/views/detail/DetailView.vue"),
     meta: { showNavbar: true },
   },
+  {
+    path: "/carts/",
+    name: "Carts",
+    component: () => import("@/views/cart/CartView.vue"),
+    meta: { showNavbar: true },
+  },
 ];
 
 const router = new VueRouter({

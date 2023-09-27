@@ -21,6 +21,7 @@
                         <b-dropdown-item href="#">Profile</b-dropdown-item>
                         <b-dropdown-item href="#">Sign Out</b-dropdown-item>
                     </b-nav-item-dropdown>
+                    <b-nav-item :href="`/carts`" style="color: var(--primary);">장바구니</b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>

@@ -8,18 +8,28 @@ export default {
         item: {
             type: Object,
             required: true
+        },
+        qty: {
+            type: Number,
+            required: true
         }
     },
     methods: {
         setCart() {
+            console.log("Current qty:", this.qty);  // This should print the updated quantity
             const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
-            cartItems.push(this.item);
+            const itemWithQty = {
+                ...this.item,
+                qty: this.qty
+            };
+            cartItems.push(itemWithQty);
             localStorage.setItem('cartItems', JSON.stringify(cartItems));
-            this.$bvToast.toast(`장바구니에 추가 됐습니다. `, {
+            this.$bvToast.toast(`Added to shopping cart. `, {
                 title: 'cart',
-                autoHideDelay: 3000,
+                autoHideDelay: 3000
             })
         }
+
     }
 }
 </script>
